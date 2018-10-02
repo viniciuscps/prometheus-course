@@ -30,12 +30,12 @@ systemctl start node_exporter
 systemctl enable node_exporter
 
 
-echo "Setup complete.
+echo "Setup complete."
 Add the following lines to /etc/prometheus/prometheus.yml:
-
+echo "
   - job_name: 'node_exporter'
     scrape_interval: 5s
     static_configs:
-      - targets: ['localhost:9100']
-"
+      - targets: ['localhost:9100']" >> /etc/prometheus/prometheus.yml
+
 
